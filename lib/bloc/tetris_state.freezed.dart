@@ -23,6 +23,7 @@ mixin _$TetrisState {
   int get level => throw _privateConstructorUsedError;
   bool get isGameOver => throw _privateConstructorUsedError;
   int get highScore => throw _privateConstructorUsedError;
+  bool get isPaused => throw _privateConstructorUsedError;
 
   /// Create a copy of TetrisState
   /// with the given fields replaced by the non-null parameter values.
@@ -44,7 +45,8 @@ abstract class $TetrisStateCopyWith<$Res> {
       int score,
       int level,
       bool isGameOver,
-      int highScore});
+      int highScore,
+      bool isPaused});
 }
 
 /// @nodoc
@@ -63,19 +65,20 @@ class _$TetrisStateCopyWithImpl<$Res, $Val extends TetrisState>
   @override
   $Res call({
     Object? board = null,
-    Object? currentPiece = freezed,
+    Object? currentPiece = null,
     Object? nextPiece = freezed,
     Object? score = null,
     Object? level = null,
     Object? isGameOver = null,
     Object? highScore = null,
+    Object? isPaused = null,
   }) {
     return _then(_value.copyWith(
       board: null == board
           ? _value.board
           : board // ignore: cast_nullable_to_non_nullable
               as List<List<Color?>>,
-      currentPiece: freezed == currentPiece
+      currentPiece: null == currentPiece
           ? _value.currentPiece
           : currentPiece // ignore: cast_nullable_to_non_nullable
               as Piece,
@@ -99,6 +102,10 @@ class _$TetrisStateCopyWithImpl<$Res, $Val extends TetrisState>
           ? _value.highScore
           : highScore // ignore: cast_nullable_to_non_nullable
               as int,
+      isPaused: null == isPaused
+          ? _value.isPaused
+          : isPaused // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -118,7 +125,8 @@ abstract class _$$TetrisStateImplCopyWith<$Res>
       int score,
       int level,
       bool isGameOver,
-      int highScore});
+      int highScore,
+      bool isPaused});
 }
 
 /// @nodoc
@@ -135,19 +143,20 @@ class __$$TetrisStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? board = null,
-    Object? currentPiece = freezed,
+    Object? currentPiece = null,
     Object? nextPiece = freezed,
     Object? score = null,
     Object? level = null,
     Object? isGameOver = null,
     Object? highScore = null,
+    Object? isPaused = null,
   }) {
     return _then(_$TetrisStateImpl(
       board: null == board
           ? _value._board
           : board // ignore: cast_nullable_to_non_nullable
               as List<List<Color?>>,
-      currentPiece: freezed == currentPiece
+      currentPiece: null == currentPiece
           ? _value.currentPiece
           : currentPiece // ignore: cast_nullable_to_non_nullable
               as Piece,
@@ -171,6 +180,10 @@ class __$$TetrisStateImplCopyWithImpl<$Res>
           ? _value.highScore
           : highScore // ignore: cast_nullable_to_non_nullable
               as int,
+      isPaused: null == isPaused
+          ? _value.isPaused
+          : isPaused // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -185,7 +198,8 @@ class _$TetrisStateImpl implements _TetrisState {
       required this.score,
       required this.level,
       this.isGameOver = false,
-      this.highScore = 0})
+      this.highScore = 0,
+      this.isPaused = false})
       : _board = board;
 
   final List<List<Color?>> _board;
@@ -210,10 +224,13 @@ class _$TetrisStateImpl implements _TetrisState {
   @override
   @JsonKey()
   final int highScore;
+  @override
+  @JsonKey()
+  final bool isPaused;
 
   @override
   String toString() {
-    return 'TetrisState(board: $board, currentPiece: $currentPiece, nextPiece: $nextPiece, score: $score, level: $level, isGameOver: $isGameOver, highScore: $highScore)';
+    return 'TetrisState(board: $board, currentPiece: $currentPiece, nextPiece: $nextPiece, score: $score, level: $level, isGameOver: $isGameOver, highScore: $highScore, isPaused: $isPaused)';
   }
 
   @override
@@ -222,27 +239,31 @@ class _$TetrisStateImpl implements _TetrisState {
         (other.runtimeType == runtimeType &&
             other is _$TetrisStateImpl &&
             const DeepCollectionEquality().equals(other._board, _board) &&
-            const DeepCollectionEquality()
-                .equals(other.currentPiece, currentPiece) &&
-            const DeepCollectionEquality().equals(other.nextPiece, nextPiece) &&
+            (identical(other.currentPiece, currentPiece) ||
+                other.currentPiece == currentPiece) &&
+            (identical(other.nextPiece, nextPiece) ||
+                other.nextPiece == nextPiece) &&
             (identical(other.score, score) || other.score == score) &&
             (identical(other.level, level) || other.level == level) &&
             (identical(other.isGameOver, isGameOver) ||
                 other.isGameOver == isGameOver) &&
             (identical(other.highScore, highScore) ||
-                other.highScore == highScore));
+                other.highScore == highScore) &&
+            (identical(other.isPaused, isPaused) ||
+                other.isPaused == isPaused));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_board),
-      const DeepCollectionEquality().hash(currentPiece),
-      const DeepCollectionEquality().hash(nextPiece),
+      currentPiece,
+      nextPiece,
       score,
       level,
       isGameOver,
-      highScore);
+      highScore,
+      isPaused);
 
   /// Create a copy of TetrisState
   /// with the given fields replaced by the non-null parameter values.
@@ -261,7 +282,8 @@ abstract class _TetrisState implements TetrisState {
       required final int score,
       required final int level,
       final bool isGameOver,
-      final int highScore}) = _$TetrisStateImpl;
+      final int highScore,
+      final bool isPaused}) = _$TetrisStateImpl;
 
   @override
   List<List<Color?>> get board;
@@ -277,6 +299,8 @@ abstract class _TetrisState implements TetrisState {
   bool get isGameOver;
   @override
   int get highScore;
+  @override
+  bool get isPaused;
 
   /// Create a copy of TetrisState
   /// with the given fields replaced by the non-null parameter values.

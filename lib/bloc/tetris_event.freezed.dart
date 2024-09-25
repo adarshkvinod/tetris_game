@@ -23,6 +23,8 @@ mixin _$TetrisEvent {
     required TResult Function() rotatePiece,
     required TResult Function() tick,
     required TResult Function() newGame,
+    required TResult Function() pauseGame,
+    required TResult Function() resumeGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +34,8 @@ mixin _$TetrisEvent {
     TResult? Function()? rotatePiece,
     TResult? Function()? tick,
     TResult? Function()? newGame,
+    TResult? Function()? pauseGame,
+    TResult? Function()? resumeGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +45,8 @@ mixin _$TetrisEvent {
     TResult Function()? rotatePiece,
     TResult Function()? tick,
     TResult Function()? newGame,
+    TResult Function()? pauseGame,
+    TResult Function()? resumeGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +57,8 @@ mixin _$TetrisEvent {
     required TResult Function(RotatePiece value) rotatePiece,
     required TResult Function(Tick value) tick,
     required TResult Function(NewGame value) newGame,
+    required TResult Function(PauseGame value) pauseGame,
+    required TResult Function(ResumeGame value) resumeGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +68,8 @@ mixin _$TetrisEvent {
     TResult? Function(RotatePiece value)? rotatePiece,
     TResult? Function(Tick value)? tick,
     TResult? Function(NewGame value)? newGame,
+    TResult? Function(PauseGame value)? pauseGame,
+    TResult? Function(ResumeGame value)? resumeGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +79,8 @@ mixin _$TetrisEvent {
     TResult Function(RotatePiece value)? rotatePiece,
     TResult Function(Tick value)? tick,
     TResult Function(NewGame value)? newGame,
+    TResult Function(PauseGame value)? pauseGame,
+    TResult Function(ResumeGame value)? resumeGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +153,8 @@ class _$StartGameImpl implements StartGame {
     required TResult Function() rotatePiece,
     required TResult Function() tick,
     required TResult Function() newGame,
+    required TResult Function() pauseGame,
+    required TResult Function() resumeGame,
   }) {
     return startGame();
   }
@@ -153,6 +167,8 @@ class _$StartGameImpl implements StartGame {
     TResult? Function()? rotatePiece,
     TResult? Function()? tick,
     TResult? Function()? newGame,
+    TResult? Function()? pauseGame,
+    TResult? Function()? resumeGame,
   }) {
     return startGame?.call();
   }
@@ -165,6 +181,8 @@ class _$StartGameImpl implements StartGame {
     TResult Function()? rotatePiece,
     TResult Function()? tick,
     TResult Function()? newGame,
+    TResult Function()? pauseGame,
+    TResult Function()? resumeGame,
     required TResult orElse(),
   }) {
     if (startGame != null) {
@@ -181,6 +199,8 @@ class _$StartGameImpl implements StartGame {
     required TResult Function(RotatePiece value) rotatePiece,
     required TResult Function(Tick value) tick,
     required TResult Function(NewGame value) newGame,
+    required TResult Function(PauseGame value) pauseGame,
+    required TResult Function(ResumeGame value) resumeGame,
   }) {
     return startGame(this);
   }
@@ -193,6 +213,8 @@ class _$StartGameImpl implements StartGame {
     TResult? Function(RotatePiece value)? rotatePiece,
     TResult? Function(Tick value)? tick,
     TResult? Function(NewGame value)? newGame,
+    TResult? Function(PauseGame value)? pauseGame,
+    TResult? Function(ResumeGame value)? resumeGame,
   }) {
     return startGame?.call(this);
   }
@@ -205,6 +227,8 @@ class _$StartGameImpl implements StartGame {
     TResult Function(RotatePiece value)? rotatePiece,
     TResult Function(Tick value)? tick,
     TResult Function(NewGame value)? newGame,
+    TResult Function(PauseGame value)? pauseGame,
+    TResult Function(ResumeGame value)? resumeGame,
     required TResult orElse(),
   }) {
     if (startGame != null) {
@@ -292,6 +316,8 @@ class _$MovePieceImpl implements MovePiece {
     required TResult Function() rotatePiece,
     required TResult Function() tick,
     required TResult Function() newGame,
+    required TResult Function() pauseGame,
+    required TResult Function() resumeGame,
   }) {
     return movePiece(direction);
   }
@@ -304,6 +330,8 @@ class _$MovePieceImpl implements MovePiece {
     TResult? Function()? rotatePiece,
     TResult? Function()? tick,
     TResult? Function()? newGame,
+    TResult? Function()? pauseGame,
+    TResult? Function()? resumeGame,
   }) {
     return movePiece?.call(direction);
   }
@@ -316,6 +344,8 @@ class _$MovePieceImpl implements MovePiece {
     TResult Function()? rotatePiece,
     TResult Function()? tick,
     TResult Function()? newGame,
+    TResult Function()? pauseGame,
+    TResult Function()? resumeGame,
     required TResult orElse(),
   }) {
     if (movePiece != null) {
@@ -332,6 +362,8 @@ class _$MovePieceImpl implements MovePiece {
     required TResult Function(RotatePiece value) rotatePiece,
     required TResult Function(Tick value) tick,
     required TResult Function(NewGame value) newGame,
+    required TResult Function(PauseGame value) pauseGame,
+    required TResult Function(ResumeGame value) resumeGame,
   }) {
     return movePiece(this);
   }
@@ -344,6 +376,8 @@ class _$MovePieceImpl implements MovePiece {
     TResult? Function(RotatePiece value)? rotatePiece,
     TResult? Function(Tick value)? tick,
     TResult? Function(NewGame value)? newGame,
+    TResult? Function(PauseGame value)? pauseGame,
+    TResult? Function(ResumeGame value)? resumeGame,
   }) {
     return movePiece?.call(this);
   }
@@ -356,6 +390,8 @@ class _$MovePieceImpl implements MovePiece {
     TResult Function(RotatePiece value)? rotatePiece,
     TResult Function(Tick value)? tick,
     TResult Function(NewGame value)? newGame,
+    TResult Function(PauseGame value)? pauseGame,
+    TResult Function(ResumeGame value)? resumeGame,
     required TResult orElse(),
   }) {
     if (movePiece != null) {
@@ -423,6 +459,8 @@ class _$RotatePieceImpl implements RotatePiece {
     required TResult Function() rotatePiece,
     required TResult Function() tick,
     required TResult Function() newGame,
+    required TResult Function() pauseGame,
+    required TResult Function() resumeGame,
   }) {
     return rotatePiece();
   }
@@ -435,6 +473,8 @@ class _$RotatePieceImpl implements RotatePiece {
     TResult? Function()? rotatePiece,
     TResult? Function()? tick,
     TResult? Function()? newGame,
+    TResult? Function()? pauseGame,
+    TResult? Function()? resumeGame,
   }) {
     return rotatePiece?.call();
   }
@@ -447,6 +487,8 @@ class _$RotatePieceImpl implements RotatePiece {
     TResult Function()? rotatePiece,
     TResult Function()? tick,
     TResult Function()? newGame,
+    TResult Function()? pauseGame,
+    TResult Function()? resumeGame,
     required TResult orElse(),
   }) {
     if (rotatePiece != null) {
@@ -463,6 +505,8 @@ class _$RotatePieceImpl implements RotatePiece {
     required TResult Function(RotatePiece value) rotatePiece,
     required TResult Function(Tick value) tick,
     required TResult Function(NewGame value) newGame,
+    required TResult Function(PauseGame value) pauseGame,
+    required TResult Function(ResumeGame value) resumeGame,
   }) {
     return rotatePiece(this);
   }
@@ -475,6 +519,8 @@ class _$RotatePieceImpl implements RotatePiece {
     TResult? Function(RotatePiece value)? rotatePiece,
     TResult? Function(Tick value)? tick,
     TResult? Function(NewGame value)? newGame,
+    TResult? Function(PauseGame value)? pauseGame,
+    TResult? Function(ResumeGame value)? resumeGame,
   }) {
     return rotatePiece?.call(this);
   }
@@ -487,6 +533,8 @@ class _$RotatePieceImpl implements RotatePiece {
     TResult Function(RotatePiece value)? rotatePiece,
     TResult Function(Tick value)? tick,
     TResult Function(NewGame value)? newGame,
+    TResult Function(PauseGame value)? pauseGame,
+    TResult Function(ResumeGame value)? resumeGame,
     required TResult orElse(),
   }) {
     if (rotatePiece != null) {
@@ -545,6 +593,8 @@ class _$TickImpl implements Tick {
     required TResult Function() rotatePiece,
     required TResult Function() tick,
     required TResult Function() newGame,
+    required TResult Function() pauseGame,
+    required TResult Function() resumeGame,
   }) {
     return tick();
   }
@@ -557,6 +607,8 @@ class _$TickImpl implements Tick {
     TResult? Function()? rotatePiece,
     TResult? Function()? tick,
     TResult? Function()? newGame,
+    TResult? Function()? pauseGame,
+    TResult? Function()? resumeGame,
   }) {
     return tick?.call();
   }
@@ -569,6 +621,8 @@ class _$TickImpl implements Tick {
     TResult Function()? rotatePiece,
     TResult Function()? tick,
     TResult Function()? newGame,
+    TResult Function()? pauseGame,
+    TResult Function()? resumeGame,
     required TResult orElse(),
   }) {
     if (tick != null) {
@@ -585,6 +639,8 @@ class _$TickImpl implements Tick {
     required TResult Function(RotatePiece value) rotatePiece,
     required TResult Function(Tick value) tick,
     required TResult Function(NewGame value) newGame,
+    required TResult Function(PauseGame value) pauseGame,
+    required TResult Function(ResumeGame value) resumeGame,
   }) {
     return tick(this);
   }
@@ -597,6 +653,8 @@ class _$TickImpl implements Tick {
     TResult? Function(RotatePiece value)? rotatePiece,
     TResult? Function(Tick value)? tick,
     TResult? Function(NewGame value)? newGame,
+    TResult? Function(PauseGame value)? pauseGame,
+    TResult? Function(ResumeGame value)? resumeGame,
   }) {
     return tick?.call(this);
   }
@@ -609,6 +667,8 @@ class _$TickImpl implements Tick {
     TResult Function(RotatePiece value)? rotatePiece,
     TResult Function(Tick value)? tick,
     TResult Function(NewGame value)? newGame,
+    TResult Function(PauseGame value)? pauseGame,
+    TResult Function(ResumeGame value)? resumeGame,
     required TResult orElse(),
   }) {
     if (tick != null) {
@@ -668,6 +728,8 @@ class _$NewGameImpl implements NewGame {
     required TResult Function() rotatePiece,
     required TResult Function() tick,
     required TResult Function() newGame,
+    required TResult Function() pauseGame,
+    required TResult Function() resumeGame,
   }) {
     return newGame();
   }
@@ -680,6 +742,8 @@ class _$NewGameImpl implements NewGame {
     TResult? Function()? rotatePiece,
     TResult? Function()? tick,
     TResult? Function()? newGame,
+    TResult? Function()? pauseGame,
+    TResult? Function()? resumeGame,
   }) {
     return newGame?.call();
   }
@@ -692,6 +756,8 @@ class _$NewGameImpl implements NewGame {
     TResult Function()? rotatePiece,
     TResult Function()? tick,
     TResult Function()? newGame,
+    TResult Function()? pauseGame,
+    TResult Function()? resumeGame,
     required TResult orElse(),
   }) {
     if (newGame != null) {
@@ -708,6 +774,8 @@ class _$NewGameImpl implements NewGame {
     required TResult Function(RotatePiece value) rotatePiece,
     required TResult Function(Tick value) tick,
     required TResult Function(NewGame value) newGame,
+    required TResult Function(PauseGame value) pauseGame,
+    required TResult Function(ResumeGame value) resumeGame,
   }) {
     return newGame(this);
   }
@@ -720,6 +788,8 @@ class _$NewGameImpl implements NewGame {
     TResult? Function(RotatePiece value)? rotatePiece,
     TResult? Function(Tick value)? tick,
     TResult? Function(NewGame value)? newGame,
+    TResult? Function(PauseGame value)? pauseGame,
+    TResult? Function(ResumeGame value)? resumeGame,
   }) {
     return newGame?.call(this);
   }
@@ -732,6 +802,8 @@ class _$NewGameImpl implements NewGame {
     TResult Function(RotatePiece value)? rotatePiece,
     TResult Function(Tick value)? tick,
     TResult Function(NewGame value)? newGame,
+    TResult Function(PauseGame value)? pauseGame,
+    TResult Function(ResumeGame value)? resumeGame,
     required TResult orElse(),
   }) {
     if (newGame != null) {
@@ -743,4 +815,274 @@ class _$NewGameImpl implements NewGame {
 
 abstract class NewGame implements TetrisEvent {
   const factory NewGame() = _$NewGameImpl;
+}
+
+/// @nodoc
+abstract class _$$PauseGameImplCopyWith<$Res> {
+  factory _$$PauseGameImplCopyWith(
+          _$PauseGameImpl value, $Res Function(_$PauseGameImpl) then) =
+      __$$PauseGameImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PauseGameImplCopyWithImpl<$Res>
+    extends _$TetrisEventCopyWithImpl<$Res, _$PauseGameImpl>
+    implements _$$PauseGameImplCopyWith<$Res> {
+  __$$PauseGameImplCopyWithImpl(
+      _$PauseGameImpl _value, $Res Function(_$PauseGameImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TetrisEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$PauseGameImpl implements PauseGame {
+  _$PauseGameImpl();
+
+  @override
+  String toString() {
+    return 'TetrisEvent.pauseGame()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PauseGameImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() startGame,
+    required TResult Function(Direction direction) movePiece,
+    required TResult Function() rotatePiece,
+    required TResult Function() tick,
+    required TResult Function() newGame,
+    required TResult Function() pauseGame,
+    required TResult Function() resumeGame,
+  }) {
+    return pauseGame();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? startGame,
+    TResult? Function(Direction direction)? movePiece,
+    TResult? Function()? rotatePiece,
+    TResult? Function()? tick,
+    TResult? Function()? newGame,
+    TResult? Function()? pauseGame,
+    TResult? Function()? resumeGame,
+  }) {
+    return pauseGame?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? startGame,
+    TResult Function(Direction direction)? movePiece,
+    TResult Function()? rotatePiece,
+    TResult Function()? tick,
+    TResult Function()? newGame,
+    TResult Function()? pauseGame,
+    TResult Function()? resumeGame,
+    required TResult orElse(),
+  }) {
+    if (pauseGame != null) {
+      return pauseGame();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StartGame value) startGame,
+    required TResult Function(MovePiece value) movePiece,
+    required TResult Function(RotatePiece value) rotatePiece,
+    required TResult Function(Tick value) tick,
+    required TResult Function(NewGame value) newGame,
+    required TResult Function(PauseGame value) pauseGame,
+    required TResult Function(ResumeGame value) resumeGame,
+  }) {
+    return pauseGame(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StartGame value)? startGame,
+    TResult? Function(MovePiece value)? movePiece,
+    TResult? Function(RotatePiece value)? rotatePiece,
+    TResult? Function(Tick value)? tick,
+    TResult? Function(NewGame value)? newGame,
+    TResult? Function(PauseGame value)? pauseGame,
+    TResult? Function(ResumeGame value)? resumeGame,
+  }) {
+    return pauseGame?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StartGame value)? startGame,
+    TResult Function(MovePiece value)? movePiece,
+    TResult Function(RotatePiece value)? rotatePiece,
+    TResult Function(Tick value)? tick,
+    TResult Function(NewGame value)? newGame,
+    TResult Function(PauseGame value)? pauseGame,
+    TResult Function(ResumeGame value)? resumeGame,
+    required TResult orElse(),
+  }) {
+    if (pauseGame != null) {
+      return pauseGame(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PauseGame implements TetrisEvent {
+  factory PauseGame() = _$PauseGameImpl;
+}
+
+/// @nodoc
+abstract class _$$ResumeGameImplCopyWith<$Res> {
+  factory _$$ResumeGameImplCopyWith(
+          _$ResumeGameImpl value, $Res Function(_$ResumeGameImpl) then) =
+      __$$ResumeGameImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResumeGameImplCopyWithImpl<$Res>
+    extends _$TetrisEventCopyWithImpl<$Res, _$ResumeGameImpl>
+    implements _$$ResumeGameImplCopyWith<$Res> {
+  __$$ResumeGameImplCopyWithImpl(
+      _$ResumeGameImpl _value, $Res Function(_$ResumeGameImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TetrisEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ResumeGameImpl implements ResumeGame {
+  _$ResumeGameImpl();
+
+  @override
+  String toString() {
+    return 'TetrisEvent.resumeGame()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResumeGameImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() startGame,
+    required TResult Function(Direction direction) movePiece,
+    required TResult Function() rotatePiece,
+    required TResult Function() tick,
+    required TResult Function() newGame,
+    required TResult Function() pauseGame,
+    required TResult Function() resumeGame,
+  }) {
+    return resumeGame();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? startGame,
+    TResult? Function(Direction direction)? movePiece,
+    TResult? Function()? rotatePiece,
+    TResult? Function()? tick,
+    TResult? Function()? newGame,
+    TResult? Function()? pauseGame,
+    TResult? Function()? resumeGame,
+  }) {
+    return resumeGame?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? startGame,
+    TResult Function(Direction direction)? movePiece,
+    TResult Function()? rotatePiece,
+    TResult Function()? tick,
+    TResult Function()? newGame,
+    TResult Function()? pauseGame,
+    TResult Function()? resumeGame,
+    required TResult orElse(),
+  }) {
+    if (resumeGame != null) {
+      return resumeGame();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StartGame value) startGame,
+    required TResult Function(MovePiece value) movePiece,
+    required TResult Function(RotatePiece value) rotatePiece,
+    required TResult Function(Tick value) tick,
+    required TResult Function(NewGame value) newGame,
+    required TResult Function(PauseGame value) pauseGame,
+    required TResult Function(ResumeGame value) resumeGame,
+  }) {
+    return resumeGame(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StartGame value)? startGame,
+    TResult? Function(MovePiece value)? movePiece,
+    TResult? Function(RotatePiece value)? rotatePiece,
+    TResult? Function(Tick value)? tick,
+    TResult? Function(NewGame value)? newGame,
+    TResult? Function(PauseGame value)? pauseGame,
+    TResult? Function(ResumeGame value)? resumeGame,
+  }) {
+    return resumeGame?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StartGame value)? startGame,
+    TResult Function(MovePiece value)? movePiece,
+    TResult Function(RotatePiece value)? rotatePiece,
+    TResult Function(Tick value)? tick,
+    TResult Function(NewGame value)? newGame,
+    TResult Function(PauseGame value)? pauseGame,
+    TResult Function(ResumeGame value)? resumeGame,
+    required TResult orElse(),
+  }) {
+    if (resumeGame != null) {
+      return resumeGame(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResumeGame implements TetrisEvent {
+  factory ResumeGame() = _$ResumeGameImpl;
 }

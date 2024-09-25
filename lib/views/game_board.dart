@@ -1,8 +1,15 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
+import 'package:the_responsive_builder/the_responsive_builder.dart';
+
 import '../bloc/tetris_bloc.dart';
 import '../bloc/tetris_event.dart';
 import '../bloc/tetris_state.dart';
+import 'next_piece_display.dart';
 
 class GameBoard extends StatelessWidget {
   @override
@@ -21,7 +28,7 @@ class GameBoard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: ElevatedButton(
-                  onPressed: () => bloc.add(NewGame()), // New Game event
+                  onPressed: () => bloc.add(const TetrisEvent.newGame()), // Start a new game
                   child: Text('New Game'),
                 ),
               ),
@@ -29,24 +36,43 @@ class GameBoard extends StatelessWidget {
           );
         }
 
-        return GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: TetrisBloc.BOARD_WIDTH,
-          ),
-          itemCount: TetrisBloc.BOARD_WIDTH * TetrisBloc.BOARD_HEIGHT,
-          itemBuilder: (context, index) {
-            final x = index % TetrisBloc.BOARD_WIDTH;
-            final y = index ~/ TetrisBloc.BOARD_WIDTH;
-            final color = _getColorForCell(state, x, y);
+        return Column(
+          children: [
 
-            return Container(
-              margin: EdgeInsets.all(1),
-              decoration: BoxDecoration(
-                color: color ?? Colors.grey[900],
-                borderRadius: BorderRadius.circular(3),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                NextPieceDisplay(piece: state.nextPiece),
+                Gap(16.dp)
+              ],
+            ),
+            Expanded(
+              child:
+              Container(
+
+                child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: TetrisBloc.BOARD_WIDTH,
+                  ),
+                  itemCount: TetrisBloc.BOARD_WIDTH * TetrisBloc.BOARD_HEIGHT,
+                  itemBuilder: (context, index) {
+                    final x = index % TetrisBloc.BOARD_WIDTH;
+                    final y = index ~/ TetrisBloc.BOARD_WIDTH;
+                    final color = _getColorForCell(state, x, y);
+
+                    return Container(
+                      margin: const EdgeInsets.all(1),
+                      decoration: BoxDecoration(
+                        color: color ?? Colors.grey[900],
+                        borderRadius: BorderRadius.circular(3),
+                      ),
+                    );
+                  },
+                ),
               ),
-            );
-          },
+            ),
+          ],
         );
       },
     );

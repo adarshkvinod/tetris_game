@@ -11,4 +11,7 @@ class TetrisEvent with _$TetrisEvent {
   const factory TetrisEvent.rotatePiece() = RotatePiece;
   const factory TetrisEvent.tick() = Tick;
   const factory TetrisEvent.newGame() = NewGame;
+  factory TetrisEvent.pauseGame() = PauseGame;
+  factory TetrisEvent.resumeGame() = ResumeGame;
 }
+

@@ -8,12 +8,12 @@ import 'tetris_event.dart';
 import 'tetris_state.dart';
 
 class TetrisBloc extends Bloc<TetrisEvent, TetrisState> {
-  static const int BOARD_WIDTH = 10;
-  static const int BOARD_HEIGHT = 10;
+  static const int BOARD_WIDTH = 16;
+  static const int BOARD_HEIGHT = 16;
   static const int INITIAL_GAME_SPEED = 1000; // Initial falling speed in milliseconds
 
   Timer? _timer;
-
+  bool isPaused = false;
   TetrisBloc()
       : super(TetrisState(
     board: List.generate(BOARD_HEIGHT, (_) => List.filled(BOARD_WIDTH, null)),
@@ -27,7 +27,29 @@ class TetrisBloc extends Bloc<TetrisEvent, TetrisState> {
     on<MovePiece>(_onMovePiece);
     on<RotatePiece>(_onRotatePiece);
     on<Tick>(_onTick);
+    on<PauseGame>(_onPauseGame);   // Pausing event
+    on<ResumeGame>(_onResumeGame); // Resuming event
   }
+  void _startTimer() {
+    _timer?.cancel();
+    _timer = Timer.periodic(Duration(milliseconds: INITIAL_GAME_SPEED), (_) {
+      if (!isPaused) {
+        add(const TetrisEvent.tick());
+      }
+    });
+  }
+  void _onPauseGame(PauseGame event, Emitter<TetrisState> emit) {
+    isPaused = true;
+    _timer?.cancel(); // Stop the game timer when paused
+    emit(state.copyWith(isPaused: true)); // Update state to reflect pause
+  }
+
+  void _onResumeGame(ResumeGame event, Emitter<TetrisState> emit) {
+    isPaused = false;
+    _startTimer(); // Restart the timer
+    emit(state.copyWith(isPaused: false)); // Update state to reflect resume
+  }
+
 
   // Start the game
   void _onStartGame(StartGame event, Emitter<TetrisState> emit) {

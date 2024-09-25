@@ -14,5 +14,6 @@ class TetrisState with _$TetrisState {
     required int level,
     @Default(false) bool isGameOver,
     @Default(0) int highScore,
+    @Default(false) bool isPaused,
   }) = _TetrisState;
 }
